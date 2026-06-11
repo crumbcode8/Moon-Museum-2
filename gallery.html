@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gallery</title>
+  <title>Sailor Moon Gallery</title>
 
   <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/gallery.css">
   <link rel="stylesheet" href="css/nav.css">
 </head>
 
 <body>
 
+  <!-- Navigation -->
   <div class="nav-toggle" onclick="document.querySelector('.main-nav').classList.toggle('show')">☰</div>
 
   <nav class="main-nav">
@@ -19,44 +19,101 @@
     <a href="gallery.html">Gallery</a>
   </nav>
 
-  <h1 class="gallery-title">Sailor Guardian Gallery</h1>
+  <!-- Page Header -->
+  <section class="player-hero">
+    <h1>Sailor Guardian Gallery</h1>
+    <h2>Crystal Tokyo Luxe Collection</h2>
+  </section>
 
-  <div class="gallery-container">
-    <div class="gallery-grid">
+  <!-- Gallery Grid -->
+  <section class="gallery-grid">
 
-      <div class="player-card">
-        <img src="images/usagi-front.jpeg" alt="Usagi Tsukino">
-        <h3>Usagi Tsukino</h3>
-        <a class="card-btn" href="player-usagi.html">View Profile</a>
+    <!-- Usagi -->
+    <a href="player-usagi.html" class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="images/usagi-front.jpeg" alt="Usagi Tsukino">
+        </div>
+        <div class="card-back">
+          <h3>Usagi Tsukino</h3>
+          <ul>
+            <li><strong>Element:</strong> Moon</li>
+            <li><strong>Role:</strong> Leader</li>
+            <li><strong>Power:</strong> Purity & Light</li>
+          </ul>
+        </div>
       </div>
+    </a>
 
-      <div class="player-card">
-        <img src="images/rei-front.jpeg" alt="Rei Hino">
-        <h3>Rei Hino</h3>
-        <a class="card-btn" href="player-rei.html">View Profile</a>
+    <!-- Ami -->
+    <a href="player-ami.html" class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="images/ami-front.jpeg" alt="Ami Mizuno">
+        </div>
+        <div class="card-back">
+          <h3>Ami Mizuno</h3>
+          <ul>
+            <li><strong>Element:</strong> Water</li>
+            <li><strong>Role:</strong> Strategist</li>
+            <li><strong>Power:</strong> Intelligence</li>
+          </ul>
+        </div>
       </div>
+    </a>
 
-      <div class="player-card">
-        <img src="images/ami-front.jpeg" alt="Ami Mizuno">
-        <h3>Ami Mizuno</h3>
-        <a class="card-btn" href="player-ami.html">View Profile</a>
+    <!-- Rei -->
+    <a href="player-rei.html" class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="images/rei-front.jpeg" alt="Rei Hino">
+        </div>
+        <div class="card-back">
+          <h3>Rei Hino</h3>
+          <ul>
+            <li><strong>Element:</strong> Fire</li>
+            <li><strong>Role:</strong> Mystic</li>
+            <li><strong>Power:</strong> Spiritual Flame</li>
+          </ul>
+        </div>
       </div>
+    </a>
 
-      <div class="player-card">
-        <img src="images/makoto-front.jpeg" alt="Makoto Kino">
-        <h3>Makoto Kino</h3>
-        <a class="card-btn" href="player-makoto.html">View Profile</a>
+    <!-- Makoto -->
+    <a href="player-makoto.html" class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="images/makoto-front.jpeg" alt="Makoto Kino">
+        </div>
+        <div class="card-back">
+          <h3>Makoto Kino</h3>
+          <ul>
+            <li><strong>Element:</strong> Thunder</li>
+            <li><strong>Role:</strong> Warrior</li>
+            <li><strong>Power:</strong> Strength</li>
+          </ul>
+        </div>
       </div>
+    </a>
 
-      <div class="player-card">
-        <img src="images/minako-front.jpg" alt="Minako Aino">
-        <h3>Minako Aino</h3>
-        <a class="card-btn" href="player-minako.html">View Profile</a>
+    <!-- Minako -->
+    <a href="player-minako.html" class="card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="images/minako-front.jpeg" alt="Minako Aino">
+        </div>
+        <div class="card-back">
+          <h3>Minako Aino</h3>
+          <ul>
+            <li><strong>Element:</strong> Light</li>
+            <li><strong>Role:</strong> Idol</li>
+            <li><strong>Power:</strong> Love</li>
+          </ul>
+        </div>
       </div>
+    </a>
 
-    </div>
-  </div>
+  </section>
 
 </body>
 </html>
-

@@ -1,18 +1,9 @@
-:root {
-  --card-width: 260px;
-  --card-height: 360px;
-  --border-radius: 16px;
-  --transition-speed: 0.8s;
-  --font-main: "Poppins", sans-serif;
-}
-
-/* Background */
 body {
   margin: 0;
-  padding: 20px;
-  font-family: var(--font-main);
+  padding: 0;
+  font-family: "Poppins", sans-serif;
 
-  background-image: url("images/moon-kingdom.jpeg");
+  background-image: url("../images/moon-kingdom.jpeg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -21,55 +12,23 @@ body {
   color: #fff;
 }
 
-/* Simple heading so you can see text */
-h1 {
+.player-hero {
   text-align: center;
-  margin-bottom: 30px;
+  padding: 60px 20px;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-/* Flip card */
-.card {
-  width: var(--card-width);
-  height: var(--card-height);
-  perspective: 1200px;
-  margin: 0 auto;
-}
-
-.card-inner {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transition: transform var(--transition-speed) ease;
-  transform-style: preserve-3d;
-  border-radius: var(--border-radius);
-}
-
-.card:hover .card-inner {
-  transform: rotateY(180deg);
-}
-
-.card-front,
-.card-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  backface-visibility: hidden;
-
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-}
-
-.card-front img,
-.card-back img {
-  width: 100%;
-  height: 100%;
+.card img {
+  width: 260px;
+  height: 360px;
   object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
 }
 
-.card-back {
-  transform: rotateY(180deg);
+.card img:hover {
+  transform: scale(1.05);
 }

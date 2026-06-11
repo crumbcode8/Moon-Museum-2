@@ -1,1 +1,100 @@
+/* ============================
+   GLOBAL STYLES
+============================ */
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: #0b0b2e;
+  color: #fff;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #ffd6ff;
+}
+
+/* HERO SECTION */
+
+.hero {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: url('../images/moon-kingdom.jpeg') center/cover no-repeat;
+  color: #fff;
+  text-shadow: 0 0 10px #ffb8ef;
+}
+
+/* PREVIEW GRID */
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.preview-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.preview-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.card-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #ff8ce6;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+}
+
+/* PLAYER PAGES */
+
+.player-hero {
+  padding: 3rem 1rem;
+  background: #1a1a40;
+  color: #fff;
+}
+
+.player-profile {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;
+}
+
+.player-img {
+  width: 280px;
+  border-radius: 12px;
+}
+
+.player-info {
+  max-width: 400px;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  background: #ff8ce6;
+  border-radius: 8px;
+  color: #000;
+  font-weight: bold;
+}
 

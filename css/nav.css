@@ -1,1 +1,45 @@
+.main-nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.main-nav a {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.nav-toggle {
+  display: none;
+  position: absolute;
+  right: 1.2rem;
+  top: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .main-nav {
+    flex-direction: column;
+    display: none;
+  }
+
+  .main-nav.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
 

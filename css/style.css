@@ -1,100 +1,210 @@
-/* ============================
-   GLOBAL STYLES
-============================ */
+/* ---------------------------------------------------
+   CRYSTAL TOKYO LUXE GLOBAL THEME
+--------------------------------------------------- */
+
+:root {
+  --rose-quartz: #f7e6ec;
+  --rose-quartz-light: #fdf4f7;
+  --silver: #dfe3ea;
+  --silver-bright: #f4f7fb;
+  --moon-glow: rgba(255, 255, 255, 0.65);
+  --shadow-soft: rgba(0, 0, 0, 0.12);
+  --shadow-medium: rgba(0, 0, 0, 0.18);
+
+  --card-width: 260px;
+  --card-height: 360px;
+  --border-radius: 16px;
+  --transition-speed: 0.8s;
+  --font-main: "Poppins", sans-serif;
+}
+
+/* ---------------------------------------------------
+   GLOBAL RESET + TYPOGRAPHY
+--------------------------------------------------- */
 
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Poppins', sans-serif;
-  background: #0b0b2e;
-  color: #fff;
+  font-family: var(--font-main);
+  background: linear-gradient(
+      to bottom right,
+      var(--rose-quartz-light),
+      var(--silver-bright)
+  );
+  background-attachment: fixed;
+  color: #333;
 }
 
 h1, h2, h3 {
-  text-align: center;
-  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-a {
-  text-decoration: none;
-  color: #ffd6ff;
-}
+/* ---------------------------------------------------
+   NAVIGATION (unchanged unless you want updates)
+--------------------------------------------------- */
 
-/* HERO SECTION */
-
-.hero {
-  padding: 4rem 2rem;
-  text-align: center;
-  background: url('../images/moon-kingdom.jpeg') center/cover no-repeat;
-  color: #fff;
-  text-shadow: 0 0 10px #ffb8ef;
-}
-
-/* PREVIEW GRID */
-
-.preview-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.preview-card {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 12px;
-  text-align: center;
+.main-nav {
+  background: var(--moon-glow);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 12px 20px;
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid var(--silver);
 }
 
-.preview-card img {
+.main-nav a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+}
+
+/* ---------------------------------------------------
+   FLIP CARD SYSTEM (Crystal Tokyo Luxe)
+--------------------------------------------------- */
+
+.card {
+  width: var(--card-width);
+  height: var(--card-height);
+  perspective: 1200px;
+  margin: 20px auto;
+}
+
+.card-inner {
   width: 100%;
-  border-radius: 10px;
+  height: 100%;
+  position: relative;
+  transition: transform var(--transition-speed) ease;
+  transform-style: preserve-3d;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 20px var(--shadow-soft);
 }
 
-.card-btn {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: #ff8ce6;
-  border-radius: 8px;
-  color: #000;
-  font-weight: bold;
+.card:hover .card-inner {
+  transform: rotateY(180deg);
 }
 
-/* PLAYER PAGES */
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  backface-visibility: hidden;
+  background: var(--silver-bright);
+  border: 2px solid var(--silver);
+  box-shadow: 0 6px 16px var(--shadow-medium);
+}
+
+/* FRONT — Full-size character art */
+.card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* BACK — Stats + Rose Quartz Glow */
+.card-back {
+  transform: rotateY(180deg);
+  background: linear-gradient(
+      to bottom right,
+      var(--rose-quartz),
+      var(--silver-bright)
+  );
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.card-back h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #444;
+}
+
+.card-back ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+.card-back li {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+/* ---------------------------------------------------
+   GALLERY GRID — 3 CARDS PER ROW
+--------------------------------------------------- */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, var(--card-width));
+  justify-content: center;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, var(--card-width));
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: repeat(1, var(--card-width));
+  }
+}
+
+/* ---------------------------------------------------
+   PLAYER PAGE LAYOUT
+--------------------------------------------------- */
 
 .player-hero {
-  padding: 3rem 1rem;
-  background: #1a1a40;
-  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(
+      to bottom right,
+      var(--rose-quartz),
+      var(--silver-bright)
+  );
+  border-bottom: 1px solid var(--silver);
 }
 
 .player-profile {
+  max-width: 900px;
+  margin: 40px auto;
   display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-  padding: 2rem;
+  gap: 40px;
+  align-items: center;
   justify-content: center;
-}
-
-.player-img {
-  width: 280px;
-  border-radius: 12px;
+  flex-wrap: wrap;
 }
 
 .player-info {
-  max-width: 400px;
+  max-width: 350px;
+  background: var(--moon-glow);
+  padding: 20px;
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--silver);
+  box-shadow: 0 6px 16px var(--shadow-soft);
+}
+
+.player-info ul {
+  padding-left: 0;
+  list-style: none;
 }
 
 .back-btn {
   display: inline-block;
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background: #ff8ce6;
-  border-radius: 8px;
-  color: #000;
-  font-weight: bold;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
 }
-

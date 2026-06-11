@@ -19,20 +19,33 @@
 }
 
 /* ---------------------------------------------------
-   GLOBAL RESET + TYPOGRAPHY
+   GLOBAL RESET + TYPOGRAPHY + RESTORED BACKGROUND
 --------------------------------------------------- */
 
 body {
   margin: 0;
   padding: 0;
   font-family: var(--font-main);
-  background: linear-gradient(
-      to bottom right,
-      var(--rose-quartz-light),
-      var(--silver-bright)
-  );
+
+  /* 🌙 RESTORED ORIGINAL BACKGROUND */
+  background-image: url("images/moon-kingdom.jpeg");
+  background-size: cover;
+  background-position: center;
   background-attachment: fixed;
+  background-repeat: no-repeat;
+
+  /* 🌫️ Soft Crystal Tokyo overlay glow */
+  position: relative;
   color: #333;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.45); /* soft white veil */
+  backdrop-filter: blur(4px);            /* dreamy Crystal Tokyo blur */
+  z-index: -1;
 }
 
 h1, h2, h3 {
@@ -41,7 +54,7 @@ h1, h2, h3 {
 }
 
 /* ---------------------------------------------------
-   NAVIGATION (unchanged unless you want updates)
+   NAVIGATION
 --------------------------------------------------- */
 
 .main-nav {
@@ -168,11 +181,8 @@ h1, h2, h3 {
 .player-hero {
   text-align: center;
   padding: 40px 20px;
-  background: linear-gradient(
-      to bottom right,
-      var(--rose-quartz),
-      var(--silver-bright)
-  );
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--silver);
 }
 

@@ -1,214 +1,133 @@
-/* GLOBAL BACKGROUND — RADIAL PASTEL SKY + MOON KINGDOM */
-html, body {
+/* RESET */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+}
+
+/* BACKGROUND */
+body.moon-bg {
+  background: url("../images/moon-kingdom-bg.jpeg") no-repeat center/cover fixed;
+  min-height: 100vh;
   font-family: "Poppins", sans-serif;
-  color: #1a1a1a;
-  background: radial-gradient(
-    circle at 50% 15%,
-    #f8fbff 0%,
-    #e4f1ff 35%,
-    #d7e4ff 65%,
-    #efe6ff 100%
-  );
-  overflow-x: hidden;
+  color: white;
 }
 
-.moon-bg {
-  background-image: url("../images/moon-kingdom.jpeg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+/* NAVIGATION */
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 28px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* WHITE VEIL FOR READABILITY */
-.moon-bg::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.55);
-  pointer-events: none;
-  z-index: -1;
+.logo {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.8);
+}
+
+.nav-links a {
+  margin-left: 20px;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  text-shadow: 0 0 6px rgba(255, 255, 255, 0.8);
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
 }
 
 /* HERO */
 .hero {
-  width: 100%;
-  min-height: 360px;
-  position: relative;
-}
-
-.hero-overlay {
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(3px);
+  height: 300px;
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
-  justify-content: center;
   align-items: center;
-}
-
-.hero-content {
-  text-align: center;
-  padding: 40px 20px 80px;
+  justify-content: center;
 }
 
 .hero-content h1 {
-  font-size: 2.6rem;
-  margin: 0;
+  font-size: 3rem;
+  text-shadow: 0 0 10px white;
 }
 
 .hero-content h2 {
+  font-size: 1.6rem;
   margin-top: 10px;
-  font-weight: 300;
+  text-shadow: 0 0 8px white;
 }
 
-/* FEATURED CARDS */
-.cards-section {
-  margin-top: -170px;
-  padding-bottom: 10px;
+/* CARD GRID */
+.cards-section,
+.gallery-grid {
+  padding: 40px;
 }
 
-.cards-grid {
+.cards-grid,
+.gallery-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 32px;
-  max-width: 1000px;
-  margin: 0 auto;
-  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
 }
 
-/* CARD + FULL-CARD GLOW */
+/* CARD BASE */
 .card {
-  width: 220px;
-  aspect-ratio: 3 / 4;
-  perspective: 1200px;
-  position: relative;
-  text-decoration: none;
-}
+  width: 260px;
+  height: 380px;
+  perspective: 1000px;
+  border-radius: 16px;
+  overflow: hidden;
+  display: block;
+  cursor: pointer;
 
-.card::before {
-  content: "";
-  position: absolute;
-  inset: -12px;
-  border-radius: 20px;
-  background: radial-gradient(circle at 50% 50%,
-    var(--glow1) 0%,
-    var(--glow2) 40%,
-    transparent 75%
-  );
-  filter: blur(28px);
-  opacity: 0.7;
-  z-index: -1;
-  transition: opacity 0.3s ease, filter 0.3s ease;
-}
-
-.card:hover::before {
-  opacity: 1;
-  filter: blur(40px);
+  /* Glow border */
+  box-shadow:
+    0 0 10px var(--glow1),
+    0 0 20px var(--glow2);
 }
 
 .card-inner {
   width: 100%;
   height: 100%;
-  position: relative;
-  transition: transform 0.8s ease;
+  transition: transform 0.9s;
   transform-style: preserve-3d;
-  border-radius: 16px;
-  overflow: hidden;
 }
 
 .card:hover .card-inner {
   transform: rotateY(180deg);
 }
 
+/* FRONT & BACK */
 .card-front,
 .card-back {
   position: absolute;
-  inset: 0;
+  width: 100%;
+  height: 100%;
   backface-visibility: hidden;
   border-radius: 16px;
   overflow: hidden;
+}
+
+.card-front img,
+.card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .card-back {
   transform: rotateY(180deg);
 }
 
-.card-front img,
-.card-back .back-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-/* STATS — GOLD SERIF */
-.stats {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: #d4a72c;
-  font-family: "Cinzel", serif;
-  font-weight: 600;
-  text-shadow: 0 0 6px rgba(255,255,255,0.8);
-  font-size: 0.9rem;
-}
-
-/* PAGE HEADER */
-.page-header {
-  text-align: center;
-  padding: 40px 20px 20px;
-}
-
-.page-header h1 {
-  font-size: 2.2rem;
-  color: #333;
-}
-
-.page-header p {
-  color: #444;
-}
-
-/* PLAYER PAGES */
-.player-profile {
-  max-width: 1000px;
-  margin: 20px auto 120px;
-  padding: 0 20px;
-  display: flex;
-  gap: 40px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.player-info {
-  flex: 1 1 260px;
-  max-width: 420px;
-  background: rgba(255, 255, 255, 0.7);
-  padding: 20px;
-  border-radius: 16px;
-  backdrop-filter: blur(6px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-}
-
-.player-info h3 {
-  color: #333;
-}
-
-.player-info p {
-  color: #444;
-  line-height: 1.5;
-}
-
-.back-btn {
-  display: inline-block;
-  margin-top: 16px;
-  text-decoration: none;
-  color: #333;
-  font-weight: 600;
-}
-/* SIMPLE WHITE STATS FOR FRONT + BACK */
-.card .stats,
-.card .simple-stats {
+/* ⭐ WHITE STATS (BACK ONLY) */
+.card .stats {
   position: absolute;
   top: 10px;
   left: 10px;
@@ -219,21 +138,32 @@ html, body {
   z-index: 10;
 }
 
-/* FIX MIRRORED BACK TEXT */
+/* ⭐ FIX MIRRORED BACK TEXT */
 .card-back .stats {
   transform: rotateY(180deg);
 }
 
-
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .cards-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+/* PLAYER PAGE */
+.player-page {
+  padding: 40px;
 }
 
-@media (max-width: 600px) {
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
+.player-info {
+  margin-top: 30px;
+  max-width: 600px;
+}
+
+.player-info h3 {
+  margin-top: 20px;
+  margin-bottom: 8px;
+  text-shadow: 0 0 6px white;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 20px;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0 0 6px white;
 }

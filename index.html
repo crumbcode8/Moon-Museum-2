@@ -10,94 +10,90 @@
 
 <body class="moon-bg">
 
-  <header class="site-header">
-    <nav class="main-nav">
-      <div class="logo">Moon Museum</div>
-      <button class="hamburger" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-      <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="gallery.html">Gallery</a>
+<header class="site-header">
+  <nav class="main-nav">
+    <div class="logo">Moon Museum</div>
+    <div class="nav-links">
+      <a href="gallery.html">Gallery</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero-content">
+  <h1>Welcome to the Moon Museum</h1>
+  <h2>Featured Guardians</h2>
+</section>
+
+<section class="featured-cards">
+
+  <!-- USAGI -->
+  <a class="card" data-card="usagi" href="player-usagi.html">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="simple-stats">
+          <p>Power: 8</p>
+          <p>Speed: 6</p>
+          <p>Magic: 10</p>
+        </div>
+        <img src="images/usagi-front.jpeg">
       </div>
-    </nav>
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="hero">
-      <div class="hero-overlay">
-        <div class="hero-content">
-          <h1>Moon Museum</h1>
-          <h2>Featured Sailor Guardians</h2>
+      <div class="card-back">
+        <img src="images/usagi-back.jpeg">
+        <div class="stats">
+          <p>Power: 8</p>
+          <p>Speed: 6</p>
+          <p>Magic: 10</p>
         </div>
       </div>
-    </section>
+    </div>
+  </a>
 
-    <!-- FEATURED CARDS -->
-    <section class="cards-section">
-      <div class="cards-grid">
-
-        <!-- Usagi -->
-        <a href="player-usagi.html" class="card"
-           style="--glow1:#ffb7d5; --glow2:#ffd1e8;">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="images/usagi-front.jpeg" alt="Usagi Tsukino front card">
-            </div>
-            <div class="card-back">
-              <img class="back-img" src="images/usagi-back.jpeg" alt="Usagi Tsukino back card">
-              <div class="stats">
-                <p>Power: 8</p>
-                <p>Speed: 6</p>
-                <p>Magic: 10</p>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- Ami -->
-        <a href="player-ami.html" class="card"
-           style="--glow1:#7fe7ff; --glow2:#b5f3ff;">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="images/ami-front.jpeg" alt="Ami Mizuno front card">
-            </div>
-            <div class="card-back">
-              <img class="back-img" src="images/ami-back.jpeg" alt="Ami Mizuno back card">
-              <div class="stats">
-                <p>Power: 7</p>
-                <p>Speed: 8</p>
-                <p>Magic: 9</p>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <!-- Rei -->
-        <a href="player-rei.html" class="card"
-           style="--glow1:#ff6b6b; --glow2:#ff9b9b;">
-          <div class="card-inner">
-            <div class="card-front">
-              <img src="images/rei-front.jpeg" alt="Rei Hino front card">
-            </div>
-            <div class="card-back">
-              <img class="back-img" src="images/rei-back.jpeg" alt="Rei Hino back card">
-              <div class="stats">
-                <p>Power: 9</p>
-                <p>Speed: 7</p>
-                <p>Magic: 9</p>
-              </div>
-            </div>
-          </div>
-        </a>
-
+  <!-- AMI -->
+  <a class="card" data-card="ami" href="player-ami.html">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="simple-stats">
+          <p>Power: 6</p>
+          <p>Speed: 7</p>
+          <p>Magic: 9</p>
+        </div>
+        <img src="images/ami-front.jpeg">
       </div>
-    </section>
+      <div class="card-back">
+        <img src="images/ami-back.jpeg">
+        <div class="stats">
+          <p>Power: 6</p>
+          <p>Speed: 7</p>
+          <p>Magic: 9</p>
+        </div>
+      </div>
+    </div>
+  </a>
 
-  </main>
+  <!-- REI -->
+  <a class="card" data-card="rei" href="player-rei.html">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="simple-stats">
+          <p>Power: 9</p>
+          <p>Speed: 8</p>
+          <p>Magic: 7</p>
+        </div>
+        <img src="images/rei-front.jpeg">
+      </div>
+      <div class="card-back">
+        <img src="images/rei-back.jpeg">
+        <div class="stats">
+          <p>Power: 9</p>
+          <p>Speed: 8</p>
+          <p>Magic: 7</p>
+        </div>
+      </div>
+    </div>
+  </a>
 
-  <script src="js/nav.js"></script>
+</section>
+
+<script src="js/nav.js"></script>
 </body>
 </html>

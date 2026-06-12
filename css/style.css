@@ -1,4 +1,3 @@
-/* GLOBAL BACKGROUND — RADIAL PASTEL SKY + MOON KINGDOM */
 html, body {
   margin: 0;
   padding: 0;
@@ -21,7 +20,6 @@ html, body {
   background-repeat: no-repeat;
 }
 
-/* WHITE VEIL FOR READABILITY */
 .moon-bg::before {
   content: "";
   position: fixed;
@@ -31,7 +29,7 @@ html, body {
   z-index: -1;
 }
 
-/* HERO */
+
 .hero {
   width: 100%;
   min-height: 360px;
@@ -63,7 +61,7 @@ html, body {
   font-weight: 300;
 }
 
-/* FEATURED CARDS */
+
 .cards-section {
   margin-top: -170px;
   padding-bottom: 10px;
@@ -78,7 +76,6 @@ html, body {
   justify-items: center;
 }
 
-/* CARD + FULL-CARD GLOW */
 .card {
   width: 220px;
   aspect-ratio: 3 / 4;
@@ -142,7 +139,7 @@ html, body {
   object-fit: cover;
 }
 
-/* STATS — GOLD SERIF */
+
 .stats {
   position: absolute;
   top: 10px;
@@ -154,7 +151,7 @@ html, body {
   font-size: 0.9rem;
 }
 
-/* PAGE HEADER */
+
 .page-header {
   text-align: center;
   padding: 40px 20px 20px;
@@ -169,7 +166,7 @@ html, body {
   color: #444;
 }
 
-/* PLAYER PAGES */
+
 .player-profile {
   max-width: 1000px;
   margin: 20px auto 120px;
@@ -207,7 +204,7 @@ html, body {
   font-weight: 600;
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 900px) {
   .cards-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));

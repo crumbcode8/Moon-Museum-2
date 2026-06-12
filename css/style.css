@@ -83,7 +83,7 @@ html, body {
 }
 
 /* ------------------------------
-   HOME PAGE CARD SECTION
+   HOME PAGE FEATURED CARDS
 ------------------------------ */
 
 .cards-section {
@@ -92,10 +92,9 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 20px;     /* small top padding */
-  margin-top: -90px;     /* BIG lift into the fade */
+  padding-top: 20px;
+  margin-top: -90px; /* Lifts cards into the fade */
 }
-
 
 .gallery-grid {
   display: flex;
@@ -114,6 +113,7 @@ html, body {
   perspective: 1200px;
   display: block;
   text-decoration: none;
+  flex: 0 0 auto; /* prevents shrinking in gallery */
 }
 
 .card-inner {
@@ -194,9 +194,9 @@ html, body {
   margin: 0 auto;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: flex-start; /* lifts card + description */
   gap: 40px;
-  padding-top: 20px;
+  padding-top: 40px; /* extra breathing room */
 }
 
 .player-profile .card {

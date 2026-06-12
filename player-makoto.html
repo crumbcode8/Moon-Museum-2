@@ -4,54 +4,66 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Makoto Kino</title>
-  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/nav.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <nav class="main-nav">
-    <a href="index.html">Home</a>
-    <a href="gallery.html">Gallery</a>
-  </nav>
-
-  <header class="page-header">
-    <h1>Makoto Kino</h1>
-    <p>Sailor Jupiter • Guardian of Thunder & Strength</p>
+  <header class="site-header">
+    <nav class="main-nav">
+      <div class="logo">Moon Museum</div>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+    </nav>
   </header>
 
-  <section class="player-profile">
+  <main>
+    <header class="page-header">
+      <h1>Makoto Kino</h1>
+      <p>Sailor Jupiter • Guardian of Thunder & Strength</p>
+    </header>
 
-    <div class="card">
-      <div class="card-inner">
-        <div class="card-front">
-          <img src="images/makoto-front.jpeg" alt="Makoto front">
-        </div>
-        <div class="card-back">
-          <img class="back-img" src="images/makoto-back.jpeg" alt="Makoto back">
-          <div class="stats">
-            <p>Power: 10</p>
-            <p>Speed: 7</p>
-            <p>Magic: 8</p>
+    <section class="player-profile">
+
+      <a class="card"
+         style="--glow1:#9cff8a; --glow2:#c8ffb8;">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="images/makoto-front.jpeg" alt="Makoto front">
+          </div>
+          <div class="card-back">
+            <img class="back-img" src="images/makoto-back.jpeg" alt="Makoto back">
+            <div class="stats">
+              <p>Power: 10</p>
+              <p>Speed: 7</p>
+              <p>Magic: 8</p>
+            </div>
           </div>
         </div>
+      </a>
+
+      <div class="player-info">
+        <h3>About Makoto</h3>
+        <p>Makoto Kino is the powerhouse of the Guardians, combining physical strength with a protective, nurturing nature.</p>
+
+        <h3>Abilities</h3>
+        <p><strong>Main Attack:</strong> Supreme Thunder</p>
+        <p><strong>Special Ability:</strong> Superhuman Strength</p>
+
+        <h3>Personality</h3>
+        <p>Strong, grounded, nurturing, and surprisingly gentle.</p>
+
+        <a class="back-btn" href="gallery.html">← Back to Gallery</a>
       </div>
-    </div>
 
-    <div class="player-info">
-      <h3>About Makoto</h3>
-      <p>Makoto Kino is the powerhouse of the Guardians, combining physical strength with a protective, nurturing nature.</p>
+    </section>
+  </main>
 
-      <h3>Abilities</h3>
-      <p><strong>Main Attack:</strong> Supreme Thunder</p>
-      <p><strong>Special Ability:</strong> Superhuman Strength</p>
-
-      <h3>Personality</h3>
-      <p>Strong, grounded, nurturing, and surprisingly gentle.</p>
-
-      <a class="back-btn" href="gallery.html">← Back to Gallery</a>
-    </div>
-
-  </section>
-
+  <script src="js/nav.js"></script>
 </body>
 </html>

@@ -1,134 +1,221 @@
-/* GLOBAL RESET */
-* {
+/* GLOBAL BACKGROUND — RADIAL PASTEL SKY + MOON KINGDOM */
+html, body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-
-body.moon-bg {
-  background: url("images/moon-kingdom-bg.jpeg") no-repeat center/cover fixed;
-  min-height: 100vh;
   font-family: "Poppins", sans-serif;
-  color: #fff;
+  color: #1a1a1a;
+  background: radial-gradient(
+    circle at 50% 15%,
+    #f8fbff 0%,
+    #e4f1ff 35%,
+    #d7e4ff 65%,
+    #efe6ff 100%
+  );
+  overflow-x: hidden;
 }
 
-/* BRIGHT, GLOWING HEADERS */
-.page-header h1,
-.hero-content h1 {
-  color: #2b3fa8;
-  font-weight: 800;
-  text-shadow:
-    0 0 6px rgba(255,255,255,1),
-    0 0 12px rgba(255,255,255,0.9),
-    0 0 20px rgba(200,220,255,0.9);
+.moon-bg {
+  background-image: url("../images/moon-kingdom.jpeg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
-.page-header p,
-.hero-content h2 {
-  color: #3d4fb8;
-  font-weight: 500;
-  text-shadow:
-    0 0 6px rgba(255,255,255,0.9),
-    0 0 12px rgba(200,220,255,0.8);
+/* WHITE VEIL FOR READABILITY */
+.moon-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.55);
+  pointer-events: none;
+  z-index: -1;
 }
 
-/* CARD CONTAINER */
-.card {
+/* HERO */
+.hero {
+  width: 100%;
+  min-height: 360px;
   position: relative;
-  width: 260px;
-  height: 380px;
-  perspective: 1000px;
-  border-radius: 16px;
-  overflow: hidden;
-  cursor: pointer;
-  display: block;
+}
+
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(3px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
+  text-align: center;
+  padding: 40px 20px 80px;
+}
+
+.hero-content h1 {
+  font-size: 2.6rem;
+  margin: 0;
+}
+
+.hero-content h2 {
+  margin-top: 10px;
+  font-weight: 300;
+}
+
+/* FEATURED CARDS */
+.cards-section {
+  margin-top: -170px;
+  padding-bottom: 10px;
+}
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+  max-width: 1000px;
+  margin: 0 auto;
+  justify-items: center;
+}
+
+/* CARD + FULL-CARD GLOW */
+.card {
+  width: 220px;
+  aspect-ratio: 3 / 4;
+  perspective: 1200px;
+  position: relative;
+  text-decoration: none;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 20px;
+  background: radial-gradient(circle at 50% 50%,
+    var(--glow1) 0%,
+    var(--glow2) 40%,
+    transparent 75%
+  );
+  filter: blur(28px);
+  opacity: 0.7;
+  z-index: -1;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+  filter: blur(40px);
 }
 
 .card-inner {
   width: 100%;
   height: 100%;
-  transition: transform 0.9s;
+  position: relative;
+  transition: transform 0.8s ease;
   transform-style: preserve-3d;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .card:hover .card-inner {
   transform: rotateY(180deg);
 }
 
-/* FRONT & BACK */
 .card-front,
 .card-back {
   position: absolute;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   backface-visibility: hidden;
   border-radius: 16px;
   overflow: hidden;
 }
 
+.card-back {
+  transform: rotateY(180deg);
+}
+
 .card-front img,
-.card-back img {
+.card-back .back-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.card-back {
-  transform: rotateY(180deg);
-}
-
-/* FIX MIRRORED BACK STATS */
-.card-back .stats {
-  transform: rotateY(180deg);
-}
-
-/* THEME COLOR MAP */
-[data-card="usagi"] {
-  --statColor1: #ffb7d5;
-  --statColor2: #ffd1e8;
-}
-
-[data-card="ami"] {
-  --statColor1: #7fe7ff;
-  --statColor2: #b5f3ff;
-}
-
-[data-card="rei"] {
-  --statColor1: #ff6b6b;
-  --statColor2: #ff9b9b;
-}
-
-[data-card="makoto"] {
-  --statColor1: #9cff8a;
-  --statColor2: #c8ffb8;
-}
-
-[data-card="minako"] {
-  --statColor1: #ffd86b;
-  --statColor2: #ffe9a3;
-}
-
-/* GRADIENT + GOLD OUTLINE STATS (FRONT + BACK ONLY) */
-.simple-stats,
+/* STATS — GOLD SERIF */
 .stats {
   position: absolute;
   top: 10px;
   left: 10px;
+  color: #d4a72c;
   font-family: "Cinzel", serif;
-  font-weight: 700;
+  font-weight: 600;
+  text-shadow: 0 0 6px rgba(255,255,255,0.8);
   font-size: 0.9rem;
+}
 
-  background: linear-gradient(
-    to bottom,
-    var(--statColor1),
-    var(--statColor2)
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* PAGE HEADER */
+.page-header {
+  text-align: center;
+  padding: 40px 20px 20px;
+}
 
-  text-shadow:
-    0 0 2px #d4a72c,
-    0 0 4px #d4a72c,
-    0 0 6px rgba(255,255,255,0.9),
-    0 0 10px rgba(255,255,255,0.8);
+.page-header h1 {
+  font-size: 2.2rem;
+  color: #333;
+}
+
+.page-header p {
+  color: #444;
+}
+
+/* PLAYER PAGES */
+.player-profile {
+  max-width: 1000px;
+  margin: 20px auto 120px;
+  padding: 0 20px;
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.player-info {
+  flex: 1 1 260px;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+  border-radius: 16px;
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.player-info h3 {
+  color: #333;
+}
+
+.player-info p {
+  color: #444;
+  line-height: 1.5;
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 16px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
 }

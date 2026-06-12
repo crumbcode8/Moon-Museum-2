@@ -1,27 +1,101 @@
+/* ------------------------------
+   GLOBAL DARK MODE THEME
+------------------------------ */
+
 body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  background: #1a1028; /* Purple‑tinted dark mode */
+  color: #ffffff;
+  overflow-x: hidden;
+}
 
+/* Smooth text rendering */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* ------------------------------
+   HERO SECTION (50vh)
+------------------------------ */
+
+.hero {
+  height: 50vh;
   background-image: url("../images/moon-kingdom.jpeg");
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
   background-repeat: no-repeat;
-
-  color: #fff;
+  position: relative;
 }
 
-/* Hero section */
-.player-hero {
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(26, 16, 40, 0.2),
+    rgba(26, 16, 40, 0.85)
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-content {
   text-align: center;
-  padding: 60px 20px;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(6px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  color: #ffffff;
 }
 
-/* Flip card container */
+.hero-content h1 {
+  font-size: 3.2rem;
+  margin: 0;
+  letter-spacing: 2px;
+}
+
+.hero-content h2 {
+  margin-top: 10px;
+  font-weight: 300;
+  opacity: 0.9;
+}
+
+
+/* ------------------------------
+   SECTION TITLES
+------------------------------ */
+
+.section-title,
+.page-header h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 40px 0 10px;
+  color: #f7d774; /* Soft gold */
+}
+
+.page-header p {
+  text-align: center;
+  margin-top: 0;
+  color: #cfc3ff;
+  opacity: 0.8;
+}
+
+
+/* ------------------------------
+   CARD SECTION BACKGROUND
+------------------------------ */
+
+.cards-section {
+  background: #12091e; /* Slightly darker purple for contrast */
+  padding: 60px 0;
+}
+
+
+/* ------------------------------
+   FLIP CARD BASE
+------------------------------ */
+
 .card {
   width: 260px;
   height: 360px;
@@ -30,7 +104,6 @@ body {
   text-decoration: none;
 }
 
-/* Flip wrapper */
 .card-inner {
   width: 100%;
   height: 100%;
@@ -43,7 +116,11 @@ body {
   transform: rotateY(180deg);
 }
 
-/* Front + Back */
+
+/* ------------------------------
+   CARD FRONT & BACK
+------------------------------ */
+
 .card-front,
 .card-back {
   position: absolute;
@@ -52,8 +129,7 @@ body {
   border-radius: 16px;
   overflow: hidden;
   backface-visibility: hidden;
-
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.45);
 }
 
 /* FRONT IMAGE */
@@ -75,43 +151,105 @@ body {
   object-fit: cover;
 }
 
-/* Stats overlay */
+
+/* ------------------------------
+   GOLD STATS (TOP LEFT)
+------------------------------ */
+
 .stats {
   position: absolute;
   top: 10px;
   left: 10px;
-  background: rgba(0,0,0,0.45);
-  padding: 8px 12px;
-  border-radius: 8px;
-  font-size: 0.9rem;
+  color: #f7d774; /* Soft gold */
+  font-weight: 600;
+  font-size: 0.95rem;
   line-height: 1.3;
+  text-shadow: 0 0 6px rgba(0,0,0,0.9); /* Glow for readability */
 }
 
-/* Player page layout */
+
+/* ------------------------------
+   PLAYER PROFILE PAGE LAYOUT
+------------------------------ */
+
 .player-profile {
-  max-width: 900px;
-  margin: 40px auto;
+  max-width: 1000px;
+  margin: 60px auto;
   display: flex;
   justify-content: center;
-  align-items: center;
-  gap: 40px;
+  align-items: flex-start;
+  gap: 50px;
   flex-wrap: wrap;
 }
 
 .player-info {
-  max-width: 350px;
-  background: rgba(255, 255, 255, 0.35);
-  padding: 20px;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.06);
+  padding: 25px;
   border-radius: 16px;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+.player-info h3 {
+  color: #f7d774;
+  margin-top: 0;
+}
+
+.player-info p {
+  line-height: 1.6;
+  color: #e8e0ff;
 }
 
 .back-btn {
   display: inline-block;
   margin-top: 20px;
   text-decoration: none;
-  color: #444;
+  color: #f7d774;
   font-weight: 600;
+  transition: 0.2s ease;
+}
+
+.back-btn:hover {
+  opacity: 0.7;
+}
+
+
+/* ------------------------------
+   PAGE HEADER (GALLERY)
+------------------------------ */
+
+.page-header {
+  text-align: center;
+  padding: 40px 20px 10px;
+}
+
+.page-header h1 {
+  color: #f7d774;
+}
+
+.page-header p {
+  color: #cfc3ff;
+  opacity: 0.8;
+}
+
+
+/* ------------------------------
+   RESPONSIVE TWEAKS
+------------------------------ */
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.1rem;
+  }
+
+  .player-profile {
+    flex-direction: column;
+    align-items: center;
+  }
 }

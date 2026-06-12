@@ -92,9 +92,10 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  padding-top: 60px;
-  margin-top: -40px; /* overlap fade */
+  padding-top: 20px;     /* small top padding */
+  margin-top: -90px;     /* BIG lift into the fade */
 }
+
 
 .gallery-grid {
   display: flex;

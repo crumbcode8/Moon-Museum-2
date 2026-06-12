@@ -1,34 +1,47 @@
 /* ------------------------------
-   GALLERY GRID LAYOUT
+   GALLERY PAGE LAYOUT
 ------------------------------ */
 
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 40px;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 40px 20px;
+.gallery-page {
+  height: 100vh;
+  background: #12091e;
+  display: flex;
+  flex-direction: column;
 }
 
+/* header already styled in style.css (.page-header) */
 
-/* ------------------------------
-   PAGE HEADER (GALLERY)
------------------------------- */
-
-.page-header {
-  text-align: center;
-  padding: 60px 20px 20px;
+.gallery-strip-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 20px;
 }
 
-.page-header h1 {
-  font-size: 2.4rem;
-  color: #f7d774; /* Soft gold */
-  margin-bottom: 10px;
+.gallery-strip {
+  display: flex;
+  gap: 32px;
+  overflow-x: auto;
+  padding-bottom: 8px;
 }
 
-.page-header p {
-  color: #d8cfff;
-  opacity: 0.85;
-  font-size: 1.1rem;
+.gallery-strip::-webkit-scrollbar {
+  height: 6px;
+}
+
+.gallery-strip::-webkit-scrollbar-track {
+  background: #1a1028;
+}
+
+.gallery-strip::-webkit-scrollbar-thumb {
+  background: #f7d774;
+  border-radius: 3px;
+}
+
+/* reuse .card from style.css but slightly larger on gallery */
+
+.gallery-strip .card {
+  width: 230px;
+  height: 310px;
 }

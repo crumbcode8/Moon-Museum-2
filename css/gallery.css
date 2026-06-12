@@ -1,22 +1,34 @@
+/* ------------------------------
+   GALLERY GRID LAYOUT
+------------------------------ */
+
 .gallery-grid {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 40px;
-  padding: 40px 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 
+/* ------------------------------
+   PAGE HEADER (GALLERY)
+------------------------------ */
 
-@media (max-width: 900px) {
-  .gallery-grid {
-    grid-template-columns: repeat(2, 260px);
-  }
+.page-header {
+  text-align: center;
+  padding: 60px 20px 20px;
 }
 
-@media (max-width: 600px) {
-  .gallery-grid {
-    grid-template-columns: repeat(1, 260px);
-  }
+.page-header h1 {
+  font-size: 2.4rem;
+  color: #f7d774; /* Soft gold */
+  margin-bottom: 10px;
+}
+
+.page-header p {
+  color: #d8cfff;
+  opacity: 0.85;
+  font-size: 1.1rem;
 }

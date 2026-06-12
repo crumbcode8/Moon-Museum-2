@@ -108,7 +108,7 @@ body.moon-bg {
   --statColor2: #ffe9a3;
 }
 
-/* GRADIENT + GOLD OUTLINE STATS (FRONT + BACK) */
+/* GRADIENT + GOLD OUTLINE STATS (FRONT + BACK ONLY) */
 .simple-stats,
 .stats {
   position: absolute;

@@ -10,66 +10,63 @@
 
 <body class="moon-bg">
 
-<header class="site-header">
-  <nav class="main-nav">
-    <div class="logo">Moon Museum</div>
-    <div class="nav-links">
-      <a href="gallery.html">Gallery</a>
-    </div>
-  </nav>
-</header>
-
-<main class="player-page">
-
-  <header class="page-header">
-    <h1>Makoto Kino</h1>
-    <p>Sailor Jupiter • Guardian of Thunder & Strength</p>
+  <header class="site-header">
+    <nav class="main-nav">
+      <div class="logo">Moon Museum</div>
+      <button class="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="gallery.html">Gallery</a>
+      </div>
+    </nav>
   </header>
 
-  <section class="player-profile">
+  <main class="player-page">
 
-    <a class="card" data-card="makoto">
-      <div class="card-inner">
+    <header class="page-header">
+      <h1>Makoto Kino</h1>
+      <p>Sailor Jupiter • Guardian of Thunder & Strength</p>
+    </header>
 
-        <div class="card-front">
-          <div class="simple-stats">
-            <p>Power: 10</p>
-            <p>Speed: 7</p>
-            <p>Magic: 6</p>
+    <section class="player-profile">
+
+      <a class="card"
+         style="--glow1:#9cff8a; --glow2:#c8ffb8;">
+        <div class="card-inner">
+          <div class="card-front">
+            <img src="images/makoto-front.jpeg" alt="Makoto front">
           </div>
-          <img src="images/makoto-front.jpeg">
-        </div>
-
-        <div class="card-back">
-          <img src="images/makoto-back.jpeg">
-          <div class="stats">
-            <p>Power: 10</p>
-            <p>Speed: 7</p>
-            <p>Magic: 6</p>
+          <div class="card-back">
+            <img class="back-img" src="images/makoto-back.jpeg" alt="Makoto back">
+            <div class="stats">
+              <p>Power: 10</p>
+              <p>Speed: 7</p>
+              <p>Magic: 8</p>
+            </div>
           </div>
         </div>
+      </a>
 
+      <div class="player-info">
+        <h3>About Makoto</h3>
+        <p>Makoto Kino is the powerhouse of the Sailor Guardians. Her physical strength is matched only by her nurturing heart and protective instincts.</p>
+
+        <h3>Abilities</h3>
+        <p><strong>Main Attack:</strong> Supreme Thunder</p>
+        <p><strong>Special Ability:</strong> Superhuman Strength</p>
+
+        <h3>Personality</h3>
+        <p>Strong, grounded, nurturing, and surprisingly gentle.</p>
+
+        <a class="back-btn" href="gallery.html">← Back to Gallery</a>
       </div>
-    </a>
 
-    <div class="player-info">
-      <h3>About Makoto</h3>
-      <p>Makoto Kino is the powerhouse of the team, combining raw strength with lightning‑charged magic and a surprisingly gentle heart.</p>
+    </section>
 
-      <h3>Abilities</h3>
-      <p><strong>Main Attack:</strong> Supreme Thunder</p>
-      <p><strong>Special Ability:</strong> Jupiter Oak Evolution</p>
+  </main>
 
-      <h3>Personality</h3>
-      <p>Strong, nurturing, brave, and fiercely protective.</p>
-
-      <a class="back-btn" href="gallery.html">← Back to Gallery</a>
-    </div>
-
-  </section>
-
-</main>
-
-<script src="js/nav.js"></script>
+  <script src="js/nav.js"></script>
 </body>
 </html>

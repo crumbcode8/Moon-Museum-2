@@ -1,136 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Guardian Gallery</title>
-  <link rel="stylesheet" href="css/nav.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/gallery.css">
-</head>
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
 
-<body class="moon-bg">
-
-<header class="site-header">
-  <nav class="main-nav">
-    <div class="logo">Moon Museum</div>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-    </div>
-  </nav>
-</header>
-
-<h1 class="gallery-title">Guardian Gallery</h1>
-
-<section class="gallery-grid">
-
-  <a class="card" data-card="usagi" href="player-usagi.html">
-    <div class="card-inner">
-      <div class="card-front">
-        <div class="simple-stats">
-          <p>Power: 8</p>
-          <p>Speed: 6</p>
-          <p>Magic: 10</p>
-        </div>
-        <img src="images/usagi-front.jpeg">
-      </div>
-      <div class="card-back">
-        <img src="images/usagi-back.jpeg">
-        <div class="stats">
-          <p>Power: 8</p>
-          <p>Speed: 6</p>
-          <p>Magic: 10</p>
-        </div>
-      </div>
-    </div>
-  </a>
-
-  <a class="card" data-card="ami" href="player-ami.html">
-    <div class="card-inner">
-      <div class="card-front">
-        <div class="simple-stats">
-          <p>Power: 6</p>
-          <p>Speed: 7</p>
-          <p>Magic: 9</p>
-        </div>
-        <img src="images/ami-front.jpeg">
-      </div>
-      <div class="card-back">
-        <img src="images/ami-back.jpeg">
-        <div class="stats">
-          <p>Power: 6</p>
-          <p>Speed: 7</p>
-          <p>Magic: 9</p>
-        </div>
-      </div>
-    </div>
-  </a>
-
-  <a class="card" data-card="rei" href="player-rei.html">
-    <div class="card-inner">
-      <div class="card-front">
-        <div class="simple-stats">
-          <p>Power: 9</p>
-          <p>Speed: 8</p>
-          <p>Magic: 7</p>
-        </div>
-        <img src="images/rei-front.jpeg">
-      </div>
-      <div class="card-back">
-        <img src="images/rei-back.jpeg">
-        <div class="stats">
-          <p>Power: 9</p>
-          <p>Speed: 8</p>
-          <p>Magic: 7</p>
-        </div>
-      </div>
-    </div>
-  </a>
-
-  <a class="card" data-card="makoto" href="player-makoto.html">
-    <div class="card-inner">
-      <div class="card-front">
-        <div class="simple-stats">
-          <p>Power: 10</p>
-          <p>Speed: 7</p>
-          <p>Magic: 6</p>
-        </div>
-        <img src="images/makoto-front.jpeg">
-      </div>
-      <div class="card-back">
-        <img src="images/makoto-back.jpeg">
-        <div class="stats">
-          <p>Power: 10</p>
-          <p>Speed: 7</p>
-          <p>Magic: 6</p>
-        </div>
-      </div>
-    </div>
-  </a>
-
-  <a class="card" data-card="minako" href="player-minako.html">
-    <div class="card-inner">
-      <div class="card-front">
-        <div class="simple-stats">
-          <p>Power: 8</p>
-          <p>Speed: 9</p>
-          <p>Magic: 8</p>
-        </div>
-        <img src="images/minako-front.jpeg">
-      </div>
-      <div class="card-back">
-        <img src="images/minako-back.jpeg">
-        <div class="stats">
-          <p>Power: 8</p>
-          <p>Speed: 9</p>
-          <p>Magic: 8</p>
-        </div>
-      </div>
-    </div>
-  </a>
-
-</section>
-
-<script src="js/nav.js"></script>
-</body>
-</html>
+.gallery-title {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  color: #2b3fa8;
+  font-size: 2.4rem;
+  text-shadow:
+    0 0 6px rgba(255,255,255,1),
+    0 0 12px rgba(255,255,255,0.9);
+}

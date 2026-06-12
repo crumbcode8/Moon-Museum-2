@@ -1,39 +1,48 @@
-/* GLOBAL */
-
+/* GLOBAL BACKGROUND — RADIAL PASTEL SKY + MOON KINGDOM */
 html, body {
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-  background: #1a1028;
-  color: #ffffff;
-  overflow-x: hidden; /* no horizontal scroll */
+  color: #1a1a1a;
+  background: radial-gradient(
+    circle at 50% 15%,
+    #f8fbff 0%,
+    #e4f1ff 35%,
+    #d7e4ff 65%,
+    #efe6ff 100%
+  );
+  overflow-x: hidden;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* HERO */
-
-.hero {
-  width: 100%;
-  min-height: 360px;
+.moon-bg {
   background-image: url("../images/moon-kingdom.jpeg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* WHITE VEIL FOR READABILITY */
+.moon-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.55);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* HERO */
+.hero {
+  width: 100%;
+  min-height: 360px;
   position: relative;
 }
 
 .hero-overlay {
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(26, 16, 40, 0.2),
-    rgba(26, 16, 40, 0.9)
-  );
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(3px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,21 +56,17 @@ img {
 .hero-content h1 {
   font-size: 2.6rem;
   margin: 0;
-  letter-spacing: 2px;
 }
 
 .hero-content h2 {
   margin-top: 10px;
   font-weight: 300;
-  opacity: 0.9;
 }
 
-/* FEATURED CARDS SECTION */
-
+/* FEATURED CARDS */
 .cards-section {
-  background: #12091e;
-  margin-top: -80px; /* overlap hero fade */
-  padding: 40px 20px 80px; /* bottom padding so not cut off */
+  margin-top: -170px;
+  padding-bottom: 10px;
 }
 
 .cards-grid {
@@ -73,18 +78,34 @@ img {
   justify-items: center;
 }
 
-/* CARD + GLOW + SPARKLES */
-
+/* CARD + FULL-CARD GLOW */
 .card {
   width: 220px;
-  max-width: 100%;
   aspect-ratio: 3 / 4;
   perspective: 1200px;
-  text-decoration: none;
   position: relative;
-  --glow1: #ffffff;
-  --glow2: #ffffff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: -12px;
+  border-radius: 20px;
+  background: radial-gradient(circle at 50% 50%,
+    var(--glow1) 0%,
+    var(--glow2) 40%,
+    transparent 75%
+  );
+  filter: blur(28px);
+  opacity: 0.7;
+  z-index: -1;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.card:hover::before {
+  opacity: 1;
+  filter: blur(40px);
 }
 
 .card-inner {
@@ -97,21 +118,20 @@ img {
   overflow: hidden;
 }
 
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
 .card-front,
 .card-back {
   position: absolute;
   inset: 0;
+  backface-visibility: hidden;
   border-radius: 16px;
   overflow: hidden;
-  backface-visibility: hidden;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.45);
 }
 
 .card-back {
-  transform: rotateY(180deg);
-}
-
-.card:hover .card-inner {
   transform: rotateY(180deg);
 }
 
@@ -122,49 +142,19 @@ img {
   object-fit: cover;
 }
 
-/* gradient glow + sparkles on hover */
-
-.card:hover {
-  transform: translateY(-6px);
-  box-shadow:
-    0 0 18px rgba(0,0,0,0.7),
-    0 0 28px var(--glow1),
-    0 0 48px var(--glow2);
-}
-
-.card::after {
-  content: "";
-  position: absolute;
-  inset: -10%;
-  background:
-    radial-gradient(circle at 20% 20%, rgba(255,255,255,0.4) 0, transparent 40%),
-    radial-gradient(circle at 80% 30%, rgba(255,255,255,0.3) 0, transparent 45%),
-    radial-gradient(circle at 30% 80%, rgba(255,255,255,0.25) 0, transparent 40%);
-  opacity: 0;
-  pointer-events: none;
-  mix-blend-mode: screen;
-  transition: opacity 0.3s ease;
-}
-
-.card:hover::after {
-  opacity: 1;
-}
-
-/* STATS */
-
+/* STATS — GOLD SERIF */
 .stats {
   position: absolute;
   top: 10px;
   left: 10px;
-  color: #f7d774;
+  color: #d4a72c;
+  font-family: "Cinzel", serif;
   font-weight: 600;
+  text-shadow: 0 0 6px rgba(255,255,255,0.8);
   font-size: 0.9rem;
-  line-height: 1.3;
-  text-shadow: 0 0 6px rgba(0,0,0,0.9);
 }
 
-/* PAGE HEADER (PLAYER + GALLERY) */
-
+/* PAGE HEADER */
 .page-header {
   text-align: center;
   padding: 40px 20px 20px;
@@ -172,95 +162,60 @@ img {
 
 .page-header h1 {
   font-size: 2.2rem;
-  color: #f7d774;
-  margin-bottom: 8px;
+  color: #333;
 }
 
 .page-header p {
-  color: #cfc3ff;
-  opacity: 0.9;
+  color: #444;
 }
 
 /* PLAYER PAGES */
-
 .player-profile {
   max-width: 1000px;
   margin: 20px auto 120px;
   padding: 0 20px;
   display: flex;
   gap: 40px;
-  align-items: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
-}
-
-.player-profile .card {
-  width: 220px;
 }
 
 .player-info {
   flex: 1 1 260px;
   max-width: 420px;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.7);
   padding: 20px;
   border-radius: 16px;
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 .player-info h3 {
-  color: #f7d774;
-  margin-top: 0;
-  margin-bottom: 8px;
+  color: #333;
 }
 
 .player-info p {
+  color: #444;
   line-height: 1.5;
-  color: #e8e0ff;
-  font-size: 0.95rem;
 }
 
 .back-btn {
   display: inline-block;
   margin-top: 16px;
   text-decoration: none;
-  color: #f7d774;
+  color: #333;
   font-weight: 600;
-  transition: 0.2s ease;
-  font-size: 0.95rem;
 }
 
-.back-btn:hover {
-  opacity: 0.7;
-}
-
-/* RESPONSIVE BREAKPOINTS */
-
+/* RESPONSIVE */
 @media (max-width: 900px) {
   .cards-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .player-profile {
-    justify-content: center;
   }
 }
 
 @media (max-width: 600px) {
   .cards-grid {
     grid-template-columns: 1fr;
-  }
-
-  .hero-content h1 {
-    font-size: 2.1rem;
-  }
-
-  .hero-content h2 {
-    font-size: 1rem;
-  }
-
-  .cards-section {
-    margin-top: -50px;
-    padding-bottom: 60px;
   }
 }

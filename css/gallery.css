@@ -1,47 +1,21 @@
-/* ------------------------------
-   GALLERY PAGE LAYOUT
------------------------------- */
-
 .gallery-page {
   height: 100vh;
   background: #12091e;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
-/* header already styled in style.css (.page-header) */
-
-.gallery-strip-wrapper {
+.gallery-grid {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 20px 20px;
-}
-
-.gallery-strip {
-  display: flex;
   gap: 32px;
-  overflow-x: auto;
-  padding-bottom: 8px;
+  padding: 20px 40px;
 }
 
-.gallery-strip::-webkit-scrollbar {
-  height: 6px;
-}
-
-.gallery-strip::-webkit-scrollbar-track {
-  background: #1a1028;
-}
-
-.gallery-strip::-webkit-scrollbar-thumb {
-  background: #f7d774;
-  border-radius: 3px;
-}
-
-/* reuse .card from style.css but slightly larger on gallery */
-
-.gallery-strip .card {
-  width: 230px;
-  height: 310px;
+.gallery-grid .card {
+  width: 210px;
+  height: 280px;
 }
